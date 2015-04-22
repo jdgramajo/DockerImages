@@ -9,3 +9,9 @@ RUN /tmp/gvm_installs.sh
 
 # Clean
 RUN rm /tmp/gvm_installs.sh
+
+# Environment variables
+ENV GROOVY_HOME /root/.gvm/groovy/current
+ENV PATH $GROOVY_HOME/bin:$PATH
+ENV GRAILS_HOME /root/.gvm/grails/current
+ENV PATH $GRAILS_HOME/bin:$PATH
