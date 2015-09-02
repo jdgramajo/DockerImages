@@ -41,3 +41,10 @@ ENV GROOVY_HOME /root/.gvm/groovy/current
 ENV PATH $GROOVY_HOME/bin:$PATH
 ENV GRAILS_HOME /root/.gvm/grails/current
 ENV PATH $GRAILS_HOME/bin:$PATH
+
+# Dummy app just to download all dependencies
+RUN grails create-app dummy
+WORKDIR ./dummy
+RUN grails compile
+WORKDIR ../
+RUN rm -rf dummy
